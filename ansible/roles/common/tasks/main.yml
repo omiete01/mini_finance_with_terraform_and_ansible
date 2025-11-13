@@ -1,0 +1,16 @@
+- name: Update Apt Cache
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Upgrade all Packages
+  apt:
+    upgrade: dist
+
+- name: Install Basic Packages
+  apt:
+    name:
+      - git
+      - curl
+      - unzip
+    state: present

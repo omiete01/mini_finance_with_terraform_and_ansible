@@ -1,0 +1,13 @@
+- name: Clone the Mini Finance project from GitHub
+  git:
+    repo: "https://github.com/pravinmishraaws/mini_finance.git"
+    dest: "/tmp/mini_finance"
+
+- name: Copy website content to web server root
+  copy:
+    src: "/tmp/mini_finance/"
+    dest: "/var/www/html/"
+    owner: www-data
+    group: www-data
+    mode: "0755"
+    remote_src: yes

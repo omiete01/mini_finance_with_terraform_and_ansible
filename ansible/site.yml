@@ -1,0 +1,7 @@
+- name: Apply Common System Updates
+  hosts: web
+  become: yes
+  roles:
+    - common
+    - nginx
+    - mini_finance
